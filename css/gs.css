@@ -1,0 +1,124 @@
+/*PAGINA SEM ULTILIDADE, APENAS PARA SALVAR CONFIGURAÇÕES*/
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Arial';
+}
+
+@media screen and (min-width: 800px){
+	
+	#interface {
+		width: 90%;
+		height: 100%;
+		margin-left: 5%;
+		margin-top: 1%;
+		background: white;
+		box-shadow: 0px 0px 8px 5px rgba(0,0,0,.5);
+	}
+
+	/* Barra Superior da pagina inicial */
+	.barrsup {
+		text-align: center;
+		padding: 3%;
+		background-color: #003a5f;
+	}
+	div.barrsup h1{
+		color: white;
+	}
+
+	/* Conteúdo da pagina inicial */
+	.corpo {
+		padding-top: 1%;
+		padding-bottom: 1%;
+		padding-left: 1%;
+	}
+	
+	.corpo #right, #left{
+		display: inline-block;
+	}
+	
+	.corpo #left {
+ 		width: 30%;
+ 		margin-bottom: 100px;
+	}
+	
+	#right {
+		width: 30%;
+   		text-align: right;
+	}
+
+	.corpo h1 {
+
+		font-size: 50px;
+	}
+	.imgCont{
+		height: 100px;
+	}
+/*=================================== Telas de celular ======================================= */
+	.login {
+		text-align: center;
+		background-color: #0059b2;
+		width: 100%;
+
+	}
+
+	.login p {
+		text-align: center;
+		font-size: 2.5em;
+		color: #fff;
+	}
+	.login label {
+		font-size: 1.5em;
+		color: #fff;
+		margin-left: 0;
+	}
+	.login input {
+		border-radius: 50px;
+		border: #003f80;
+		background-color: #003f80; 
+		padding: 10px;
+		margin-bottom: 3%;
+		margin-top: 2%;
+		color: #fff;
+		width: 50%;
+	}
+/* ================================= Rodapé das páginas ====================================== */
+
+	.rodape {
+		text-align: center;
+		position: relative;
+		width: 100%;
+		bottom: 0px;
+		font-size: 1,8em;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		background-color:#003a5f; 
+		box-shadow: 0px 0px 7px rgba(0,0,0,.5);
+		color: white;
+		font-family: 'Arial';
+		text-decoration:;
+	}
+
+	.barrainfo a {
+		color: blue;
+		text-decoration: none;
+	}
+	footer.barrainfo p {
+		color: white;
+		text-decoration: none;
+	}
+
+	/*Hovers*/
+	.barrainfo a:hover {
+		color: blue;
+		text-decoration: underline;
+	}
+	
+}
+
+
+
+
+
+
