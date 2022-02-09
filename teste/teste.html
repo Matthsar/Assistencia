@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Application</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+</head>
+<body>
+
+	 <form class="log">
+			<div class="log1">
+              <input
+                id="cpf"
+                class="input100"
+                type="text"
+                name="user"
+                placeholder="CPF"
+              />
+            </div>
+
+            <!-- Form Senha -->
+            <div class="log1">
+              <input
+                id="senha"
+                class="input100"
+                type="password"
+                name="pass"
+                placeholder="Senha"
+              />
+
+            </div>
+            <br />
+            <br />
+            <div class="container-login100-form-btn">
+              <button id="login" class="login100-form-btn">Login</button>
+            </div>
+          </form>
+          <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+	
+  <script>
+ 	Parse.initialize(
+      'M0gPv9obpqozN1TM2yugbitukCMCGmrC6JL6lwSI',
+      'vjvX0MrUA7fQlP9ODMvfqKx0Fz0evQK1kzemsAaW'
+      )
+    Parse.serverURL = 'https://parseapi.back4app.com/'
+    async function createParseUser() {
+    	alert(`${document.getElementsById('cpf').value}`)
+      const user = new Parse.User()
+      user.set('cpf', document.getElementById('cpf').value)
+      user.set('senha', document.getElementById('senha').value)
+
+      try {
+        user = await user.save()
+        alert(`${user}`)
+        if (user != null) {
+          alert(`Novo objeto de usuario criado ${user.cpf}`)
+        }
+      } catch (e) {
+        alert(`Error ${e.message}`)
+      }
+    }
+
+    document
+      .getElementById('login')
+      .addEventListener('click', async function () {
+        createParseUser()
+      })
+      
+  </script>
+</body>
+</html>
