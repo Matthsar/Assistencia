@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>My First Application</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
-  <script type="text/javascript">
-    Parse.initialize(
-      'M0gPv9obpqozN1TM2yugbitukCMCGmrC6JL6lwSI',
-      'vjvX0MrUA7fQlP9ODMvfqKx0Fz0evQK1kzemsAaW'
+  <head>
+    <title>My First Application</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script
+      type="text/javascript"
+      src="https://npmcdn.com/parse/dist/parse.min.js"
+    ></script>
+    <script type="text/javascript">
+      Parse.initialize(
+        'M0gPv9obpqozN1TM2yugbitukCMCGmrC6JL6lwSI',
+        'vjvX0MrUA7fQlP9ODMvfqKx0Fz0evQK1kzemsAaW'
       )
-    Parse.serverURL = 'https://parseapi.back4app.com/'
-  </script>
-</head>
-<body>
+      Parse.serverURL = 'https://parseapi.back4app.com/'
+    </script>
+  </head>
+  <body>
+    <h1>JS SDK</h1>
+    <input id="username" type="text" placeholder="Username" />
+    <input id="email" type="email" placeholder="Email" />
+    <input id="password" type="password" placeholder="Password" />
+    <button id="createButton">Create User</button>
+    <button id="teste">retrieve</button>
 
-  <h1>JS SDK</h1>   
-<input id="username" type="text" placeholder="Username"/>
-<input id="email" type="email" placeholder="Email"/>
-<input id="password" type="password" placeholder="Password" />
-<button id="createButton">Create User</button>
-  
-  <script>
-  // Create a new User
-async function createParseUser() {
-  // Creates a new Parse "User" object, which is created by default in your Parse app
-  let user = new Parse.User();
-  // Set the input values to the new "User" object
-  user.set("username", document.getElementById("username").value);
-  user.set("email", document.getElementById("email").value);
-  user.set("password", document.getElementById("password").value);
-  try {
-    // Call the save method, which returns the saved object if successful
-    user = await user.save();
-    if (user !== null) {
-      // Notify the success by getting the attributes from the "User" object, by using the get method (the id attribute needs to be accessed directly, though)
-      alert(
-        `New object created with success! ObjectId: ${
-          user.id
-        }, ${user.get("username")}`
-      );
-    }
-  } catch (error) {
-    alert(`Error: ${error.message}`);
-  }
-}
+    <script>
+      async function createParseUser() {
+        let user = new Parse.User()
+        user.set('username', document.getElementById('username').value)
+        user.set('email', document.getElementById('email').value)
+        user.set('password', document.getElementById('password').value)
+        try {
+          user = await user.save()
+          if (user !== null) {
+            alert(
+              `New object created with success! ObjectId: ${
+                user.id
+              }, ${user.get('username')}`
+            )
+          }
+        } catch (error) {
+          alert(`Error: ${error.message}`)
+        }
+      }
 
-// Add on click listener to call the create parse user function
-document.getElementById("createButton").addEventListener("click", async function () {
-  createParseUser();
-});  
-</script>
+      // Add on click listener to call the create parse user function
+      document
+        .getElementById('createButton')
+        .addEventListener('click', async function () {
+          createParseUser()
+        })
 
-</body>
+      function login() {
+        const user = Parse.User.logIn('matheus', '123')
+          .then(function (user) {
+            alert('User criado nome: ' + user.get('username'))
+          })
+          .catch(function (error) {
+            alert('Erro ' + error.code + ' mensagem: ' + error.message)
+          })
+      }
+
+      document
+        .getElementById('teste')
+        .addEventListener('click', async function () {
+          login()
+        })
+    </script>
+  </body>
 </html>
