@@ -24,46 +24,53 @@
       </div>
 
       <!-- Conteiner da caixa "SENHA ATUAL" -->
-      <div class="row">
-        <div class="senhaAtual">
-          <div class="row">
-            <div
-              id="chaco"
-              class="col-xs-5 col-xs-offset-1"
-              style="text-align: right"
-            >
-              <br /><br />
+        <div class="row">
+          <div class="senhaAtual">
+            <div class="row">
+              <div
+                id="chaco"
+                class="col-xs-5 col-xs-offset-1"
+                style="text-align: right"
+              >
+
+              <br />
+              <br />
               <span class="senhaAtualTexto">SENHA: &nbsp;</span>
+              </div>
+
+
+              <div class="col-xs-5" style="text-align: left">
+                <span id="senhaAtualNumero"> ---- </span>
+              </div>
+            
+              <input type="hidden" id="senhaNormal" value="0000" />
+              <input type="hidden" id="senhaPrioridade" value="P000" />
             </div>
-            <div class="col-xs-5" style="text-align: left">
-              <span id="senhaAtualNumero">----</span>
-            </div>
-            <input type="hidden" id="senhaNormal" value="0000" />
-            <input type="hidden" id="senhaPrioridade" value="P000" />
           </div>
         </div>
-      </div>
 
       <!-- Conteiner da caixa "Ultima Chamada" -->
       <div class="row">
         <div class="col-xs-4 col-xs-offset-4 ultimaSenha">
+         
           <!--Bootstrap-->
           <br />
+
           <div id="ultimaSenhaTexto">
-            &nbsp;&nbsp;&nbsp;&nbsp;ULTIMA CHAMADA<br />
-            <span>Senha </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;ULTIMA CHAMADA<br/>
+            <span></span>
             <span id="ultimaSenhaNumero"> ----</span>
             <br />
 
-            <span>Senha 2</span>
+            <span></span>
             <span id="ultimaSenhaNumero2"> ----</span>
             <br />
 
-            <span>Senha 3</span>
+            <span></span>
             <span id="ultimaSenhaNumero3"> ----</span>
             <br />
 
-            <span>Senha 4</span>
+            <span></span>
             <span id="ultimaSenhaNumero4"> ----</span>
             <br />
           </div>
